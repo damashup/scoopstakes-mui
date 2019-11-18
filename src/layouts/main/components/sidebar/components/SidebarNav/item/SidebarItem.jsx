@@ -1,13 +1,12 @@
 import React, { forwardRef } from 'react';
 import { NavLink as RouterLink } from 'react-router-dom';
-import { List, ListItem, ListItemIcon, ListItemText } from '@material-ui/core';
+import { List} from '@material-ui/core';
 import {connect} from 'react-redux';
 import {signOutStart} from '../../../../../../../redux/user/actions/sign-out/start/sign-out-start.action';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
-import StarBorder from '@material-ui/icons/StarBorder';
 import Collapse from '@material-ui/core/Collapse';
-import {SidebarListItemText, SidebarListItem} from './SidebarItem.styles'
+import {SidebarListItem} from './SidebarItem.styles'
 import SidebarSubItem from './sub-item/sub-item.component';
 
 const CustomRouterLink = forwardRef((props, ref) => (
@@ -21,9 +20,8 @@ const CustomRouterLink = forwardRef((props, ref) => (
 
 ));
 
-const SidebarItem = ({page, signOutStart}) => {
+const SidebarItem = ({page, signOut}) => {
   const subsections = page.subsections ? page.subsections : null;
-  console.log(page.subsections ? page.subsections : 'no subsection')
   const [open, setOpen] = React.useState(false);
   const handleClick = () => {
     setOpen(!open);
@@ -39,7 +37,7 @@ const SidebarItem = ({page, signOutStart}) => {
         key={page.title}
         component={CustomRouterLink} 
         to={page.href}
-        onClick={page.signOut ? signOutStart:handleClick}
+        onClick={handleClick}
       >
 
         {page.title}
@@ -52,7 +50,7 @@ const SidebarItem = ({page, signOutStart}) => {
         <List component="div" disablePadding>
           {subsections.map(subsection => <SidebarSubItem 
                                             subitem={subsection} 
-                                            key={subsection.id}
+                                            key={subsection.title}
                                             base={page.href}
                                           />)}
         </List>
@@ -63,7 +61,7 @@ const SidebarItem = ({page, signOutStart}) => {
         key={page.title}
         component={CustomRouterLink} 
         to={`${page.href}`}
-        onClick={page.signOut ? signOutStart:handleClick}
+        onClick={(page.linkUrl === 'sign-out') ? signOut:handleClick}
       >
         {page.title}
       </SidebarListItem>   
@@ -74,7 +72,7 @@ const SidebarItem = ({page, signOutStart}) => {
       
 
 const mapDispatchToProps = dispatch => ({
-  signOutStart: () => dispatch(signOutStart())
+  signOut: () => dispatch(signOutStart())
 })
 
 export default connect(null,mapDispatchToProps)(SidebarItem);

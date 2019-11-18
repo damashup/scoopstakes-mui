@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import {createStructuredSelector} from 'reselect';
 import PageTitle from '../../../components/page-elements/page-title';
 import { Breadcrumbs, Link } from '@material-ui/core';
-import { selectDirectorySections } from '../../../redux/directory/directory.selectors';
+import { selectDirectorySections } from '../../../redux/directory/selectors/directory.selectors';
 
 const DashboardSubsection = ({match,sections}) => {
     console.log(match.params.subsection);

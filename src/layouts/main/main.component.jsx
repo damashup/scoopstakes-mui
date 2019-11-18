@@ -8,7 +8,7 @@ import { useTheme } from '@material-ui/styles';
 import {useStyles} from './main.styles';
 import { useMediaQuery } from '@material-ui/core';
 import { Sidebar, Topbar, Footer } from './components';
-import { Landing, SignIn } from '../../pages';
+import { Landing, SignIn, SignUp, Admin } from '../../pages';
 import Section from '../section';
 import Subsection from '../subsection';
 
@@ -55,8 +55,11 @@ const Main = props => {
       <Switch>
         <Route exact path='/' render={() => currentUser ? <Redirect to='/dashboard' />: <Landing />} />
         <Route exact path='/signin' render={() => currentUser ? <Redirect to='/dashboard' />: <SignIn />} />
-        <Route exact path='/:section' component={Section} />
-        <Route exact path='/:section/:subsection' component={Subsection} />
+        <Route exact path='/signup' render={() => currentUser ? <Redirect to='/dashboard' />: <SignUp />} /> 
+        <Redirect from='/sign-out' to='/signin' />
+        <Route path='/:section' component={Section} />
+        {/* <Route exact path='/:section/:subsection' component={Subsection} /> */}
+        <Route exact path='/dashboard' render={() => currentUser ? <Section />: <SignIn />} />
       </Switch>
         <Footer />
       </main>

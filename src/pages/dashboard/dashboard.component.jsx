@@ -11,7 +11,7 @@ import { selectCurrentUser } from "../../redux/user/selectors/user.selectors";
 // import { selectedRound } from "../../redux/round/round.selectors";
 
 import { Breadcrumbs, Link } from "@material-ui/core";
-import { selectDirectorySections } from "../../redux/directory/directory.selectors";
+import { selectDirectorySections } from "../../redux/directory/selectors/directory.selectors";
 import DashboardSubSection from './subsection';
 
 function DashbboardNavigation(){

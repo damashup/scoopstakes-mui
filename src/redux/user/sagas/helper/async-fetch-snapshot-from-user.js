@@ -4,7 +4,7 @@ import {put, call} from 'redux-saga/effects';
 import {signInSuccess} from '../../actions/sign-in/success/sign-in-success.action';
 import {signInFailure} from '../../actions/sign-in/failure/sign-in-failure.action';
 
-import {createUserProfileDocument} from '../../../../firebase/firebase.utils';
+import {createUserProfileDocument} from '../../../../firebase';
 
 export function* asyncFetchSnapshotFromUserAuth(userAuth, additionalData) {
     try {

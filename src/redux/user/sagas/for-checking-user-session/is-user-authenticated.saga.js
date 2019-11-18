@@ -3,14 +3,14 @@ import {takeLatest, put} from 'redux-saga/effects';
 import UserActionTypes from '../../types/user.types';
 
 import {signInFailure} from '../../actions/sign-in/failure/sign-in-failure.action';
-import {getCurrentUser} from '../../../../firebase/firebase.utils';
+import {fetchCurrentUser} from '../../../../firebase';
 
 import {asyncFetchSnapshotFromUserAuth} from '../helper/async-fetch-snapshot-from-user';
 
 export function* isUserAuthenticated(){
     try {
         console.log('attempting authentication');
-        const userAuth = yield getCurrentUser();
+        const userAuth = yield fetchCurrentUser();
         if(!userAuth) return;
         yield asyncFetchSnapshotFromUserAuth(userAuth);  
         return userAuth;

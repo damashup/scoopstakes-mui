@@ -3,9 +3,9 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
 
-import directoryReducer from './directory/directory.reducer';
 import userReducer from './user/reducers/user.reducer';
 import teamReducer from './team/reducers/team.reducer';
+import directoryReducer from './directory/reducers/directory.reducer';
 
 const persistConfig = {
   key: 'root',
@@ -14,9 +14,9 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  directory: directoryReducer,
   user: userReducer,
-  team: teamReducer
+  team: teamReducer,
+  directory: directoryReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

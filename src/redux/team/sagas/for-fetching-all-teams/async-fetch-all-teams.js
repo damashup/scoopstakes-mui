@@ -1,6 +1,6 @@
 import {put} from 'redux-saga/effects';
 
-import {getAllTeamsDetail, convertAllTeamsSnapshotToMap} from '../../../../firebase/firebase.utils';
+import {getAllTeamsDetail, convertAllTeamsSnapshotToMap} from '../../../../firebase';
 import fetchAllTeamsSuccess from '../../actions/fetch-all-teams/success';
 import fetchAllTeamsFailure from '../../actions/fetch-all-teams/failure';
 
@@ -13,3 +13,6 @@ export function* asyncFetchAllTeams(){
         yield put(fetchAllTeamsFailure(error));
     }   
 }
+
+
+

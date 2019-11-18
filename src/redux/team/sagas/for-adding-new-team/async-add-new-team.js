@@ -2,8 +2,8 @@ import {put} from 'redux-saga/effects';
 
 
 import {firestore} from '../../../../firebase/firebase.utils';
-import addNewTeamSuccess from '../../actions/addNewTeam/success';
-import addNewTeamFailure from '../../actions/addNewTeam/failure';
+import addNewTeamSuccess from '../../actions/add-new-team/success';
+import addNewTeamFailure from '../../actions/add-new-team/failure';
 import {isUserAuthenticated} from '../../../user/sagas/for-checking-user-session/is-user-authenticated.saga';
 
 export function* asyncAddNewTeam({payload: team}){

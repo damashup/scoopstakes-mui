@@ -1,5 +1,5 @@
 import UserActionTypes from '../../../types/user.types';
-import {ERROR_CODE_ACCOUNT_EXISTS, ERROR_MSG_ACCOUNT_EXISTS} from '../../../../../firebase/firebase.utils';
+import {ERROR_CODE_ACCOUNT_EXISTS, ERROR_MSG_ACCOUNT_EXISTS} from '../../../../../firebase/error-handling/error';
 
 
 export const signInFailure = error => {

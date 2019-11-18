@@ -1,22 +1,26 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {withRouter, Route, Redirect, Link as RouterLink, Switch} from 'react-router-dom'
-import { Grid, Container, Button } from '@material-ui/core';
-import { selectDirectorySections } from '../../redux/directory/directory.selectors';
+import {withRouter, Route} from 'react-router-dom'
+import { Grid, Container} from '@material-ui/core';
+import { selectDirectorySections } from '../../redux/directory/selectors/directory.selectors';
 import { createStructuredSelector } from 'reselect';
 import SectionTitle from './components/title';
 import Subsection from '../subsection';
 
-const Section = ({sections, match,history}) => {
-    console.log(match);
-    console.log(history);
-    console.log(sections);
+const Section = ({sections, match}) => {
+    const sectionData = sections ? sections.find(({linkUrl}) => linkUrl === match.params.section) : null;
+    const {subsections} = sectionData ? sectionData : '';
+
     return (
        <Container maxWidth="lg">
-        <Grid container spacing={3}>
+        <Grid container spacing={1}>
             <Grid item xs={10}>
-                <Grid container><SectionTitle title={match.params.section} /></Grid>
-            </Grid>            
+                <Grid container><SectionTitle title={sectionData ? sectionData.title : null} /></Grid>
+            </Grid>
+            <Route path={`${match.path}/:subsection`}>
+                <Subsection />
+            </Route>
+
         </Grid>
         </Container>
     )

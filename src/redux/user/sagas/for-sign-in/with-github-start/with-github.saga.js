@@ -2,7 +2,8 @@ import {takeLatest, put} from 'redux-saga/effects';
 import UserActionTypes from '../../../types/user.types';
 import {asyncFetchSnapshotFromUserAuth} from '../../helper/async-fetch-snapshot-from-user';
 import {signInFailure} from '../../../actions/sign-in/failure/sign-in-failure.action'
-import {auth, githubProvider} from '../../../../../firebase/firebase.utils';
+import {auth} from '../../../../../firebase/firebase.utils';
+import {githubProvider} from '../../../../../firebase';
 
 function* signInWithGitHub(){
     try {
