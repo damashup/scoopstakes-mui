@@ -1,0 +1,1 @@
+export {default} from './fetch-all-teams-success.action';
