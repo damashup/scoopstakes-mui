@@ -34,7 +34,7 @@ export const MaterialButtonDiv = styled(Button)`&&{
     margin: auto;
     //letter-spacing: 0.5px;
     //font-size: 1.5rem;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     //font-weight: bolder;
     cursor: pointer;
     display: flex;

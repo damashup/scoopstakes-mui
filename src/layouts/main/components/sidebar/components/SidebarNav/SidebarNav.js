@@ -11,7 +11,7 @@ const SidebarNav = ({sections, currentUser}) => {
   return (
   <List>
     {sections.map((page) => {
-      if((page.forSignedInOnly && !currentUser) || (page.publicOnly && currentUser)) return null;
+      if((page.hiddenForSignedOutUser && !currentUser) || (page.hiddenForSignedInUser && currentUser)) return null;
       return <SideBarItem page={page} key={page.id}/>
     })}
   </List>

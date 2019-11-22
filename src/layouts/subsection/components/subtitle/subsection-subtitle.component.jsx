@@ -1,8 +1,9 @@
 import React from 'react';
-import PageSubTitle from '../../../../components/page-elements/page-subtitle';
+import { Typography } from '@material-ui/core';
 
 const SectionTitle = ({subtitle, match}) => {
-    //const subsectionData = Object.sectionData.find(({linkUrl}) => linkUrl === match.params.subsections)
-    return (<PageSubTitle subtitle={subtitle} />)};
+    return (
+        <div><Typography variant='h3' color='primary'>{subtitle} </Typography></div>
+        )};
 
 export default SectionTitle;

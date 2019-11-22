@@ -1,21 +1,23 @@
 import React from 'react'
 
 import CustomDivider from '../../components/page-elements/divider/custom-divider/custom-divider.component';
-import SignInWithEmailAndPassword from './sign-in-with-email-and-password/sign-in-with-email-and-password.component';
-import SignInWithSocial from './sign-in-with-social/sign-in-with-social';
+import SignInWithSocial from '../../components/app/sign-in/with-social/sign-in-with-social';
 
-import {
-  SignInPageDiv
-  } from './sign-in-page-styles';
+import { Grid } from '@material-ui/core';
+import SignInWithEmail from '../../components/app/sign-in/with-email';
 
 
 const SignInPage = () => {
   return (
-    <SignInPageDiv>
-      <SignInWithEmailAndPassword />    
-      <CustomDivider>or</CustomDivider>
-      <SignInWithSocial />      
-    </SignInPageDiv>
+    <Grid container direction='row'>
+            <Grid item xs={3}>&nbsp;</Grid>
+            <Grid item xs={5}>
+                <SignInWithEmail />
+                <CustomDivider>or</CustomDivider>
+                <SignInWithSocial />
+            </Grid>
+            <Grid item xs={4}>&nbsp;</Grid>
+    </Grid>
   )
 }
 

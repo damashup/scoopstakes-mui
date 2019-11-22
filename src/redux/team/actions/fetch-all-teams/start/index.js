@@ -1,1 +1,1 @@
-export {default as fetchAllTeamsStart} from './fetch-all-teams-start'
+export {default} from './fetch-all-teams-start'

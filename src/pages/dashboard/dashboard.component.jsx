@@ -4,7 +4,6 @@ import {createStructuredSelector} from 'reselect';
 import {PageDiv} from '../../components/page-styles/base-styles';
 import PageTitle from '../../components/page-elements/page-title/page-title.component';
 import Container from '@material-ui/core/Container';
-import { Link as RouterLink, Route } from 'react-router-dom';
 
 
 import { selectCurrentUser } from "../../redux/user/selectors/user.selectors";
@@ -12,24 +11,9 @@ import { selectCurrentUser } from "../../redux/user/selectors/user.selectors";
 
 import { Breadcrumbs, Link } from "@material-ui/core";
 import { selectDirectorySections } from "../../redux/directory/selectors/directory.selectors";
-import DashboardSubSection from './subsection';
-
-function DashbboardNavigation(){
-  return
-}
 
 
-
-function DashboardHome (){
-  return (
-    <h1>
-      This is Dashboard Home Placeholder
-    </h1>
-  )
-}
-
-
-const Dashboard = ({currentUser,selectedRound, match, sections}) => {
+const Dashboard = ({match, sections}) => {
   const dashboardItems = sections.find(({linkUrl}) => linkUrl === 'dashboard');
   const {subsections} = dashboardItems
   console.log(match.path);

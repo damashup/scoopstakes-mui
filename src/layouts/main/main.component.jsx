@@ -6,11 +6,11 @@ import { Switch, Route, Redirect } from 'react-router-dom';
 import clsx from 'clsx';
 import { useTheme } from '@material-ui/styles';
 import {useStyles} from './main.styles';
-import { useMediaQuery } from '@material-ui/core';
+import { useMediaQuery, Grid } from '@material-ui/core';
 import { Sidebar, Topbar, Footer } from './components';
-import { Landing, SignIn, SignUp, Admin } from '../../pages';
+import { Landing, SignIn, SignUp} from '../../pages';
 import Section from '../section';
-import Subsection from '../subsection';
+import SignUpPage from '../../pages/signup';
 
 
 
@@ -51,18 +51,30 @@ const Main = props => {
         open={shouldOpenSidebar}
         variant={isDesktop ? 'persistent' : 'temporary'}
       />
-      <main className={classes.content}>
-      <Switch>
-        <Route exact path='/' render={() => currentUser ? <Redirect to='/dashboard' />: <Landing />} />
-        <Route exact path='/signin' render={() => currentUser ? <Redirect to='/dashboard' />: <SignIn />} />
-        <Route exact path='/signup' render={() => currentUser ? <Redirect to='/dashboard' />: <SignUp />} /> 
-        <Redirect from='/sign-out' to='/signin' />
-        <Route path='/:section' component={Section} />
-        {/* <Route exact path='/:section/:subsection' component={Subsection} /> */}
-        <Route exact path='/dashboard' render={() => currentUser ? <Section />: <SignIn />} />
-      </Switch>
+      {/* <main className={classes.content}> */}
+      <Grid container direction='row'>
+        
+        <Grid item xs={9}>
+        <Switch>
+          <Route exact path='/' render={() => currentUser ? <Redirect to='/dashboard' />: <Landing />} />
+          {/* <Route exact path='/play' render={() => currentUser ? <Redirect to='/dashboard' />: <Landing />} /> */}
+          <Route exact path='/signup' render={() => currentUser ? <Redirect to='/dashboard' />: <SignUp />} /> 
+          <Redirect from='/sign-out' to='/signin' />
+          <Route path='/:section'><Section currentUser={currentUser} /></Route>
+          <Route exact path='/dashboard' render={() => currentUser ? <Section />: <SignIn />} />
+        </Switch>
+        </Grid>
+        <Grid item xs={3}>
+          {currentUser ? 
+          <div>You're logged in... Some juicy info will go here</div>
+          :
+          <SignUpPage />
+          }
+        </Grid> 
+      </Grid>  
+
         <Footer />
-      </main>
+      {/* </main> */}
     </div>
   );
 };

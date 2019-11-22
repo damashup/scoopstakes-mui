@@ -1,13 +1,19 @@
 import React from 'react'
-import { Grid } from '@material-ui/core'
+import { Grid, Container } from '@material-ui/core'
+import { PageDiv } from '../../components/page-styles/base-styles';
+import NextRound from '../../components/app/play/next-round';
 
 const LandingPage = () => {
     return (
-        <Grid container spacing={3}>
+        <PageDiv>
+            <Container maxWidth="lg">
+                <Grid container direction='row' justify='center' spacing={6}>
+                    <Grid item xs={12}>&nbsp;</Grid>
+                    <Grid item xs={10}><NextRound /></Grid>
 
-            <Grid item xs={6}>Splash placeholder</Grid>
-            <Grid item xs={6}>Sign In placeholder</Grid>
-        </Grid>
+                </Grid>
+        </Container>
+        </PageDiv>
 
     )
 }

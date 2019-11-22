@@ -1,6 +1,6 @@
 import React, { forwardRef } from 'react';
 import { NavLink as RouterLink } from 'react-router-dom';
-import { List} from '@material-ui/core';
+import { List, Typography} from '@material-ui/core';
 import {connect} from 'react-redux';
 import {signOutStart} from '../../../../../../../redux/user/actions/sign-out/start/sign-out-start.action';
 import ExpandLess from '@material-ui/icons/ExpandLess';
@@ -40,7 +40,7 @@ const SidebarItem = ({page, signOut}) => {
         onClick={handleClick}
       >
 
-        {page.title}
+          <Typography variant='h5' color='textSecondary'>{page.title}</Typography>
         {open ? <ExpandLess /> : <ExpandMore />}
 
       </SidebarListItem>
@@ -63,7 +63,7 @@ const SidebarItem = ({page, signOut}) => {
         to={`${page.href}`}
         onClick={(page.linkUrl === 'sign-out') ? signOut:handleClick}
       >
-        {page.title}
+        <Typography variant='h5' color='textSecondary'>{page.title}</Typography>
       </SidebarListItem>   
       }
     </>

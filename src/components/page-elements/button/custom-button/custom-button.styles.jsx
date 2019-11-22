@@ -51,7 +51,7 @@ export const CustomButtonDiv = styled.button`
     letter-spacing: 0.5px;
     padding: 0 2rem 0 2rem;
     font-size: 15px;
-    text-transform: uppercase;
+    //text-transform: uppercase;
     font-weight: bolder;
     border: none;
     cursor: pointer;

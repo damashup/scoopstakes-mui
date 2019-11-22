@@ -1,6 +1,6 @@
 const convertAllDirectoryItemsSnapshotToMap = (directory) => {
     const transformedDirectory = directory.docs.map(doc => {
-      const {title, subsections, order, linkUrl, icon, href, forSignedInOnly} = doc.data();
+      const {title, subsections, order, linkUrl, icon, href, hiddenForSignedInUser, hiddenForSignedOutUser} = doc.data();
       return {
         id: doc.id,
         title,
@@ -9,9 +9,9 @@ const convertAllDirectoryItemsSnapshotToMap = (directory) => {
         linkUrl,
         icon,
         href,
-        forSignedInOnly
-      };
-    });
+        hiddenForSignedInUser,
+        hiddenForSignedOutUser
+    }});
     return transformedDirectory;
   }
 export default convertAllDirectoryItemsSnapshotToMap;
