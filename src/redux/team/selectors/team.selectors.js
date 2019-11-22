@@ -6,8 +6,3 @@ export const selectAllTeams = createSelector(
   [selectTeam],
   team => team.teams
 );
-
-export const selectTeamDetails = (teamName) => createSelector(
-  [selectAllTeams],
-  teams => teams.find(team => team.team_name === teamName) 
-);
