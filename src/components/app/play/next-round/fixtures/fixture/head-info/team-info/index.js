@@ -1,0 +1,1 @@
+export {default} from './fixture-head-info.component'

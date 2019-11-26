@@ -1,17 +1,15 @@
-import { makeStyles } from '@material-ui/styles';
+import styled from 'styled-components';
+import {lg, sm} from '../../components/page-styles/base-styles';
 
-export const useStyles = makeStyles(theme => ({
-    root: {
-      paddingTop: 56,
-      height: '100%',
-      [theme.breakpoints.up('sm')]: {
-        paddingTop: 64
+
+export const OverallDiv = styled.div`
+      padding-top: 56px;
+      height: 100%
+      padding-left: 240px;
+      @media only screen and (max-width: ${sm}) { 
+        padding-top: 64px;
       }
-    },
-    shiftContent: {
-      paddingLeft: 240
-    },
-    content: {
-      height: '100%'
-    }
-  }));
+      @media only screen and (max-width: ${lg}) { 
+        padding-left: 0px;
+      }
+  `;

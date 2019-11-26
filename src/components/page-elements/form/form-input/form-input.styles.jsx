@@ -14,10 +14,10 @@ export const shrinkLabel = css`
 export const FormInputDiv = styled.div`
     position: relative;
     margin: 45px 0;
-
     input[type='password'] {
         letter-spacing: 0.3em;
       }
+ 
 `;
 
 export const FormInputInput = styled.input`
@@ -27,8 +27,9 @@ export const FormInputInput = styled.input`
     font-size: 18px;
     padding: 10px 10px 10px 5px;
     display: block;
-    width: 100%;
-    border: none;
+    width: 95%;
+    max-width: 150px;
+    //border: 1px solid ${colorGreyDark3};
     border-radius: 0;
     border-bottom: 1px solid ${colorGreyDark3};
     margin: 25px 0;

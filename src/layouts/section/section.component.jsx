@@ -7,6 +7,7 @@ import { createStructuredSelector } from 'reselect';
 import SectionTitle from './components/title';
 import Subsection from '../subsection';
 import {Landing, SignIn} from '../../pages';
+import {SectionTitleGrid} from './section.styles';
 
 const Section = ({sections, match, currentUser}) => {
     const sectionData = sections ? sections.find(({linkUrl}) => linkUrl === match.params.section) : null;
@@ -15,14 +16,16 @@ const Section = ({sections, match, currentUser}) => {
        <Container maxWidth="lg">
             <Grid container spacing={1}>
                 <Grid item xs={12}>
-                    <Grid container><SectionTitle title={sectionData ? sectionData.title : null} /></Grid>
+                    <SectionTitleGrid container>
+                        <SectionTitle title={sectionData ? sectionData.title : null} />
+                    </SectionTitleGrid>
                     <Divider />
                 </Grid>
-                <Route exact path='/signin' render={() => currentUser ? <Redirect to='/dashboard' />: <SignIn />} />
-                <Route path='/play'  component={Landing}/> 
+                
                 <Route path={`${match.path}/:subsection`}>
-                    <Subsection />
+                    <Subsection currentUser={currentUser}/>
                 </Route>
+                
             </Grid>
         </Container>
     )

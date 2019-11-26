@@ -2,6 +2,7 @@ import styled, {css} from 'styled-components';
 
 import {
         emailSignInStyles,
+        emailSignInHorizontalStyles,
         facebookSignInStyles, 
         githubSignInStyles, 
         googleSignInStyles, 
@@ -27,6 +28,7 @@ const getBespokeButtonStyles = props => {
     if(props.isGitHubSignIn){return githubSignInStyles;}
     if(props.isTwitterSignIn){return twitterSignInStyles;}
     if(props.isEmailSignIn){return emailSignInStyles;}
+    if(props.isEmailSignInHorizontal){return emailSignInHorizontalStyles;}
     // Sign up Button propertes
     if(props.signup){return signUpStyles}
     // Login Mangement Buttonproperties:

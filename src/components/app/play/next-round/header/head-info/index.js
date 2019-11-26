@@ -1,0 +1,1 @@
+export {default} from './next-round-header-head-info.component';

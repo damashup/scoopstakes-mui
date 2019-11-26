@@ -1,5 +1,15 @@
 import styled, {css} from 'styled-components';
 
+//helpers
+
+export const GrowDiv = styled.div`flex-grow: 1;`;
+
+export const xs = css`0px`; // extra-small
+export const sm = css`600px`; // small
+export const md = css`960px`; // medium
+export const lg = css`1280px`; // large
+export const xl = css`1920px`; // extra large
+
 export const blendMode1 = css`multiply`;
 export const blendMode2 = css`color`;
 export const blendMode3 = css`color-burn`;
@@ -36,20 +46,36 @@ export const colorGreyDark3 = css`#333`;
 export const colorGreyDisabled = css`#cccccc`;
 export const colorGreyDisabledText = css`#666666`;
 export const colorGreyDisabledBorder = css`#999999`;
+
 export const colorPrimary = css`#0606e2`;
 export const colorPrimaryShade = css`#0505c1`;
-export const colorPrimaryDark = css`#02024d`;
+export const colorPrimaryDark = css`#7ed56f`;
+
+export const colorNavy = css`#0606e2`;
+export const colorNavyShade = css`#0505c1`;
+export const colorNavyDark = css`#02024d`;
+
+
 export const colorTwitterBlue = css`#55acee`;
 export const colorTwitterBlueShade = css`#1684d8`;
 export const colorWhite = css`#fff;`;
 
 export const colorQuinary = css`#55c57a`;
-export const colorQuinaryLight = css`#7ed56f`;
-export const colorQuinaryDark = css`#28b485`;
+export const colorQuinaryLight = css`#0606e2`;
+export const colorQuinaryDark = css`#02024d`;
+
+export const colorGreen = css`#55c57a`;
+export const colorGreenLight = css`#7ed56f`;
+export const colorGreenDark = css`#28b485`;
+
+export const colorQuaternaryLight = css`#ffb900`;
+export const colorQuaternaryDark = css`#ff7830`;
+
 
 
 // page layout styles
 export const PageDiv = styled.div`
+    //background-image: linear-gradient(to right bottom, ${colorGreyLight1}, ${colorGreyLight3});
     width: 100%;
     display:flex;
     flex-direction: column;

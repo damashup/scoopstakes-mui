@@ -3,6 +3,7 @@ import {css} from 'styled-components';
 import {
         buttonVanilla,
         colorBlack,
+        colorNavyDark,
         colorGreyLight1, 
         colorGoogleRedDark, 
         colorGoogleRedShade, 
@@ -17,7 +18,15 @@ import {
 export const emailSignInStyles = css`
     ${signButtonWidthHeight}
     ${buttonVanilla}
-`;      
+`;
+
+export const emailSignInHorizontalStyles = css`
+    ${signButtonWidthHeight}
+    ${buttonVanilla}
+    width: 100px;
+    border-radius: 20px;
+    background-color: ${colorNavyDark};
+`;  
 
 export const facebookSignInStyles = css`
     ${signButtonWidthHeight}
