@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import { createStructuredSelector } from 'reselect';
-import { selectNextRound, selectOpenRounds } from '../../../../redux/round/selectors/round.selectors';
+import { selectNextRound } from '../../../../redux/round/selectors/round.selectors';
 import NextRoundComponent from './next-round.component';
 
 const NextRoundContainer = ({nextRound}) => {

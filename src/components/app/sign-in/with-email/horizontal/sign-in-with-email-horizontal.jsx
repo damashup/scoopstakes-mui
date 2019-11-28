@@ -7,7 +7,6 @@ import { emailSignInStart } from '../../../../../redux/user/actions/sign-in/star
 import {
     FormHorizontal,
     SignInButton,
-    SignInWithEmailHorizontalDiv,
   SignInTextDiv,
   SignInWithEmailPasswordDiv,
   SignUpLink,

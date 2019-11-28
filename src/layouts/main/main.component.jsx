@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useTheme } from '@material-ui/styles';
 import { useMediaQuery } from '@material-ui/core';
 import { Sidebar, Topbar, Footer } from './components';
-import MainRoutes from './components/main-routes';
+import MainRoutes from './components/routes';
 import {OverallDiv} from './main.styles';
 
 const Main = () => {

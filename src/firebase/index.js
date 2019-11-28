@@ -1,3 +1,8 @@
+// predictions
+// --> leaderboard
+// --> results
+export {default as fetchUserResultForRound} from './data-prediction/results/fetch-user-result-for-round';
+export {default as convertResultsSnapshotToMap} from './data-prediction/results/convert';
 
 // teams
 export {default as getAllTeamsDetail} from './data-team/get-all';
@@ -10,6 +15,7 @@ export {default as convertAllDirectorySnapshotToMap} from './data-directory/conv
 // round
 export {default as getAllRoundsDetail} from './data-round/get-all';
 export {default as fetchOpenRoundsDetail} from './data-round/fetch-open';
+export {default as fetchSingleRound} from './data-round/fetch-single';
 export {default as convertAllRoundsSnapshotToMap} from './data-round/convert-all';
 
 //users

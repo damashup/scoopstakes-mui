@@ -9,7 +9,6 @@ import {asyncFetchSnapshotFromUserAuth} from '../helper/async-fetch-snapshot-fro
 
 export function* isUserAuthenticated(){
     try {
-        console.log('attempting authentication');
         const userAuth = yield fetchCurrentUser();
         if(!userAuth) return;
         yield asyncFetchSnapshotFromUserAuth(userAuth);  
@@ -21,6 +20,5 @@ export function* isUserAuthenticated(){
 }
 
 export function* onCheckUserSession(){
-    console.log('onCheckUserSession is fired!')
     yield takeLatest(UserActionTypes.CHECK_USER_SESSION, isUserAuthenticated)
 }

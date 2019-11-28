@@ -1,0 +1,1 @@
+export {default} from './splash-round-not-finished.component';

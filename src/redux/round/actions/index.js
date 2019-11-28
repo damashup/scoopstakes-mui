@@ -1,3 +1,12 @@
-export {default as addOpenRoundStart} from './add-open-round/start';
-export {default as addOpenRoundFailure} from './add-open-round/failure';
-export {default as addOpenRoundSuccess} from './add-open-round/success';
+export {default as fetchOpenRoundStart} from './fetch-open-rounds/start';
+export {default as fetchOpenRoundFailure} from './fetch-open-rounds/failure';
+export {default as fetchOpenRoundSuccess} from './fetch-open-rounds/success';
+export {default as fetchSingleRoundStart} from './fetch-single-round/start';
+export {default as fetchSingleRoundFailure} from './fetch-single-round/failure';
+export {default as fetchSingleRoundSuccess} from './fetch-single-round/success';
+export {default as addNewRoundStart} from './add-new-round/start';
+export {default as addNewRoundFailure} from './add-new-round/failure';
+export {default as addNewRoundSuccess} from './add-new-round/success';
+export {default as deleteRoundStart} from './delete-round/start';
+export {default as deleteRoundFailure} from './delete-round/failure';
+export {default as deleteRoundSuccess} from './delete-round/success';

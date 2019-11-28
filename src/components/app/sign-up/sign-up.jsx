@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import { Formik, Form, Field } from 'formik';
-import TextFormField from '../../page-elements/form/formik/form-fields/text-form-field';
+import TextFormField from '../../page-elements/form/formik/form-fields/text-field/text-form-field';
 import { Button } from '@material-ui/core';
 
 

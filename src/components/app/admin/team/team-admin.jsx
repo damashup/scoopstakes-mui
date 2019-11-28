@@ -1,20 +1,44 @@
 import React from 'react';
 import PageSubTitle from '../../../page-elements/page-subtitle/page-subtitle.component';
 import AddNewTeam from './add-new-team';
-import { Grid } from '@material-ui/core';
+import { Grid, Paper } from '@material-ui/core';
+import TeamList from './manage-existing-team';
+import {AddTeamPaper, PageGrid} from './styles';
 
 const TeamAdmin = () => (
   <> 
     
-    <Grid container direction='column' spacing={2}>
-      <Grid item xs={12}>
-        <AddNewTeam />
+    <PageGrid container direction='row' spacing={2}>
+
+      <Grid item xs={3}>
+          <Grid item xs={12}>
+            <PageSubTitle subtitle="Add New Teams" />
+          </Grid>
+          <Grid item xs={12}>
+            <AddTeamPaper elevation={8}>
+              <AddNewTeam />
+            </AddTeamPaper>
+          </Grid>
+          
+
       </Grid>
-      <Grid item xs={12}>
-        <PageSubTitle subtitle="Recently added" />
-      </Grid>
-      
-    </Grid>
+
+      <Grid item xs={6}>
+
+        <Grid item xs={12}>
+          <PageSubTitle subtitle="Manage Existing Teams" />
+        </Grid>
+        <Grid item xs={12}>
+          <Paper elevation={8}>
+            <TeamList />
+          </Paper>
+        </Grid>
+        
+        
+
+      </Grid>  
+
+    </PageGrid>
     
   </> 
 );

@@ -6,17 +6,19 @@ import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableFooter from '@material-ui/core/TableFooter';
+import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
-import {TablePaginationActions} from './team-table-pagination';
-import {useStyles2, AvatarStyled} from './team-table.styles';
+import {TablePaginationActions} from './table-pagination';
 import { selectAllTeams } from '../../../../../../redux/team/selectors/team.selectors';
-import { Button } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
+import DeleteDialogueButton from '../delete-dialogue-box/delete-dialogue-box';
+
+import {useStyles2, AvatarStyled} from './styles';
+import EditDialogueButton from '../edit-dialogue-box';
 
 const AllTeamsTable = ({allTeams}) =>  {
-  console.log(allTeams);
-  
   const classes = useStyles2();
   const [page, setPage] = React.useState(0);
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
@@ -36,15 +38,43 @@ const AllTeamsTable = ({allTeams}) =>  {
     <Paper className={classes.root}>
       <div className={classes.tableWrapper}>
         <Table className={classes.table} aria-label="custom pagination table">
+        <TableHead>
+          <TableRow>
+            <TableCell>Logo</TableCell>
+            <TableCell>Name</TableCell>
+            <TableCell>Short Name</TableCell>
+            <TableCell></TableCell>
+            <TableCell></TableCell>
+          </TableRow>
+        </TableHead>
           <TableBody>
             {allTeams ? allTeams.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage).map(row => 
               <TableRow key={row.id}>
-                <TableCell component="th" scope="row"><AvatarStyled src={row.logo}></AvatarStyled></TableCell>
-                <TableCell>{row.team_name}</TableCell>
-                <TableCell><Button variant='outlined' color='primary' fullWidth>Edit</Button></TableCell>
-                <TableCell><Button variant='outlined' color='secondary' fullWidth>Delete</Button></TableCell>
+
+                <TableCell component="th" scope="row">
+                  <AvatarStyled src={row.logo}>
+                  </AvatarStyled>
+                </TableCell>
+
+                <TableCell>
+                    <Typography variant='h6'>{row.team_name}</Typography>
+                </TableCell>
+
+                <TableCell>
+                    <Typography variant='subtitle2'>{row.team_short}</Typography>
+                </TableCell>
+
+                <TableCell>
+                  <EditDialogueButton row={row}/>
+
+                </TableCell>
+                <TableCell>
+
+                  <DeleteDialogueButton row={row}/>
+
+                </TableCell>
               </TableRow>
-            ) : 'loading teams...'}
+            ) : <TableRow><TableCell>'loading teams...'</TableCell></TableRow>}
 
             {emptyRows > 0 && (
               <TableRow style={{ height: 53 * emptyRows }}>
@@ -77,7 +107,8 @@ const AllTeamsTable = ({allTeams}) =>  {
 }
 
 const mapStateToProps = createStructuredSelector ({
-    allTeams: selectAllTeams
+    allTeams: selectAllTeams,
+
 });
 
 export default connect(mapStateToProps)(AllTeamsTable);

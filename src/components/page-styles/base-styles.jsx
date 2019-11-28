@@ -1,5 +1,7 @@
 import styled, {css} from 'styled-components';
 
+
+
 //helpers
 
 export const GrowDiv = styled.div`flex-grow: 1;`;
@@ -49,7 +51,7 @@ export const colorGreyDisabledBorder = css`#999999`;
 
 export const colorPrimary = css`#0606e2`;
 export const colorPrimaryShade = css`#0505c1`;
-export const colorPrimaryDark = css`#7ed56f`;
+export const colorPrimaryDark = css`#02024d`;
 
 export const colorNavy = css`#0606e2`;
 export const colorNavyShade = css`#0505c1`;
@@ -71,7 +73,15 @@ export const colorGreenDark = css`#28b485`;
 export const colorQuaternaryLight = css`#ffb900`;
 export const colorQuaternaryDark = css`#ff7830`;
 
+// Button styles
 
+export const submitButton = css`
+background-color: ${colorGreenLight};
+padding: 1rem;
+color: ${colorWhite};
+font-size: 110%;
+text-transform: Capitalize;
+`;
 
 // page layout styles
 export const PageDiv = styled.div`

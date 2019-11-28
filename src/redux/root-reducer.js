@@ -2,11 +2,11 @@ import { combineReducers } from 'redux';
 import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 
-
-import userReducer from './user/reducers/user.reducer';
-import teamReducer from './team/reducers/team.reducer';
 import directoryReducer from './directory/reducers/directory.reducer';
+import resultReducer from './result/reducers/result.reducer';
 import roundReducer from './round/reducers/round.reducer';
+import teamReducer from './team/reducers/team.reducer';
+import userReducer from './user/reducers/user.reducer';
 
 const persistConfig = {
   key: 'root',
@@ -15,10 +15,11 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  user: userReducer,
-  team: teamReducer,
   directory: directoryReducer,
+  result: resultReducer,
   round: roundReducer,
+  team: teamReducer,
+  user: userReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);

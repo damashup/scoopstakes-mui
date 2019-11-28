@@ -2,6 +2,7 @@ import RoundActionTypes from '../types/round.types';
 
 const INITIAL_STATE = {
     recentlyAddedRound: [],
+    activeRound: null,
     rounds: null,
     openRounds: null,
     isFetching: false,
@@ -32,6 +33,14 @@ const roundReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 openRounds: action.payload,
+                isFetching: false,
+                error: null
+            }; 
+
+        case RoundActionTypes.FETCH_SINGLE_ROUND_SUCCESS: 
+            return {
+                ...state,
+                activeRound: action.payload,
                 isFetching: false,
                 error: null
             }; 

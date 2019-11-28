@@ -7,13 +7,18 @@ export const selectAll = createSelector(
   round => round.rounds
 );
 
-export const selectOpen = createSelector(
+export const selectOpenRounds = createSelector(
   [selectRound],
   round => round.openRounds
 );
 
 
 export const selectNextRound = createSelector(
-  [selectOpen],
+  [selectOpenRounds],
   allOpenRounds => allOpenRounds ? allOpenRounds.find(rnd => rnd.round_status === 'open') : 'loading next round....'
+)
+
+export const selectActiveRound = createSelector(
+  [selectRound],
+  round => round.activeRound
 )

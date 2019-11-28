@@ -1,1 +1,1 @@
-export {default} from './add-team-panel.component'
+export {default} from './add-team-input'

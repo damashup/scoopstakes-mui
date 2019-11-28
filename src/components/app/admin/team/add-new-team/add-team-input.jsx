@@ -1,12 +1,15 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
 import { Formik, Form, Field } from 'formik';
-import TextFormField from '../../../../page-elements/form/formik/form-fields/text-form-field';
+import TextFormField from '../../../../page-elements/form/formik/form-fields/text-field/text-form-field';
 import { Button } from '@material-ui/core';
 
 import {addNewTeamStart} from '../../../../../redux/team/actions';
+import fetchAllTeamsStart from '../../../../../redux/team/actions/fetch-all-teams/start';
 
-const AddTeamInput = ({addNewTeamStart}) => {
+import {FormField, SubmitButton} from './styles'
+
+const AddTeamInput = ({addNewTeamStart, fetchAllTeams}) => {
     const initial_state = {team_name: '', team_short: '', logo: ''};
     const [newTeamDetails, setNewTeamDetails] = useState(initial_state)
 
@@ -33,6 +36,7 @@ const AddTeamInput = ({addNewTeamStart}) => {
                                                     team_short: data.team_short,
                                                     logo: data.logo
                                                     })
+                                fetchAllTeams()                    
                                 resetForm()                    
                 }}
             >
@@ -41,7 +45,7 @@ const AddTeamInput = ({addNewTeamStart}) => {
 
                 <Form>
   
-                        <Field
+                        <FormField
                             placeholder='Enter Team Name or athletes name'
                             label='Name' 
                             name='team_name' 
@@ -49,33 +53,30 @@ const AddTeamInput = ({addNewTeamStart}) => {
                             variant="outlined"
                         />
 
-                        <Field
+                        <FormField
                             placeholder='Enter Short name or nickname'
-                            label='Nickname' 
+                            label='Short name' 
                             name='team_short' 
                             component={TextFormField}
                             variant="outlined"
                         />
 
-                        <Field
+                        <FormField
                             placeholder='Enter url link to logo or avatar image'
                             label='Logo Url' 
                             name='logo' 
                             component={TextFormField}
                             variant="outlined"
                         />
-                        {/* <Grid container direction='row' justify='center'> */}
 
-                            <Button 
+                            <SubmitButton 
                                 disabled={isSubmitting} 
                                 type='submit' 
-                                variant='outlined' 
-                                color='primary'
+                                fullWidth
                             >
                                 Submit
-                            </Button>
+                            </SubmitButton>
 
-                        {/* </Grid> */}
                         {/* <pre>
                             {JSON.stringify(values, null, 2)}
                         </pre> */}
@@ -87,8 +88,11 @@ const AddTeamInput = ({addNewTeamStart}) => {
 
 )};
 
+
+
 const mapDispatchToProps = dispatch => ({
-    addNewTeamStart: newTeamDetails => dispatch(addNewTeamStart(newTeamDetails))
+    addNewTeamStart: newTeamDetails => dispatch(addNewTeamStart(newTeamDetails)),
+    fetchAllTeams: () => dispatch(fetchAllTeamsStart())
   })
   
 export default connect(null,mapDispatchToProps)(AddTeamInput);
