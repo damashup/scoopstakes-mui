@@ -12,24 +12,21 @@ import {
         colorTwitterBlue,
         colorTwitterBlueShade,
         colorWhite,
-        signButtonWidthHeight
+        colorGreenLight
         } from '../../../../page-styles/base-styles';  
 
 export const emailSignInStyles = css`
-    ${signButtonWidthHeight}
-    ${buttonVanilla}
+    background-color: ${colorGreenLight};
 `;
 
 export const emailSignInHorizontalStyles = css`
-    ${signButtonWidthHeight}
-    ${buttonVanilla}
+    //${buttonVanilla}
     width: 100px;
     border-radius: 20px;
     background-color: ${colorNavyDark};
 `;  
 
 export const facebookSignInStyles = css`
-    ${signButtonWidthHeight}
     background-color: ${colorFacebookBlueShade};
     color: white;
     &:hover {
@@ -40,7 +37,6 @@ export const facebookSignInStyles = css`
 `;
 
 export const githubSignInStyles = css`
-    ${signButtonWidthHeight}
     background-color: ${colorWhite};
     color: ${colorBlack};
     
@@ -52,7 +48,6 @@ export const githubSignInStyles = css`
 `;
 
 export const googleSignInStyles = css`
-    ${signButtonWidthHeight}
     background-color: ${colorGoogleRedDark};
     color: white;
     &:hover {
@@ -63,7 +58,6 @@ export const googleSignInStyles = css`
 
 
 export const twitterSignInStyles = css`
-    ${signButtonWidthHeight}
     background-color: ${colorTwitterBlueShade};
     color: white;
     &:hover {

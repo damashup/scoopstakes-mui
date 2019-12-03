@@ -1,6 +1,6 @@
 import styled, {css} from 'styled-components';
 
-import {colorGreyLight2, colorGreyDark3, colorBlack, colorQuinaryDark} from '../../../page-styles/base-styles';
+import {colorGreyDark3, colorQuinaryDark} from '../../../page-styles/base-styles';
 
 
 
@@ -12,6 +12,7 @@ export const shrinkLabel = css`
 `
 
 export const FormInputDiv = styled.div`
+    height: 100%;
     position: relative;
     margin: 5px 2px;
     input[type='password'] {
@@ -21,20 +22,14 @@ export const FormInputDiv = styled.div`
 `;
 
 export const FormInputInput = styled.input`
-    background: none;
     background-color: white;
     color: ${colorQuinaryDark};
-    //font-size: 12px;
     padding: 10px 10px 10px 5px;
-    display: inline;
-    width: 200px;
-    height: 40%;
-    //max-width: 150px;
-    //border: 1px solid ${colorGreyDark3};
+    //width: 95%
+    width: 320px
+    height: 50px;
+    border: 1px solid ${colorGreyDark3};
     border-radius: 0;
-    //border-bottom: 1px solid ${colorGreyDark3};
-    margin-top: 25px 0;
-
     &:focus {
         outline: none;
     }

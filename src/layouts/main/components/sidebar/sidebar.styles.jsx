@@ -19,3 +19,10 @@ export const SidebarDiv = styled.div`
     display: flex;
     flex-direction: column;
 `;
+
+export const SidebarProfileDiv = styled.div`
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;

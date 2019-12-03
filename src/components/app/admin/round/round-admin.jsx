@@ -3,14 +3,14 @@ import PageSubTitle from '../../../page-elements/page-subtitle/page-subtitle.com
 import AddNewRound from './add-new-round';
 import { Grid, Paper } from '@material-ui/core';
 import RoundList from './manage-existing-round';
-import {AddRoundPaper, PageGrid} from './styles';
+import {AddGrid, AddRoundPaper, PageGrid} from './styles';
 
 const RoundAdmin = () => (
   <> 
     
     <PageGrid container direction='row' spacing={2}>
 
-      <Grid item xs={3}>
+      <AddGrid item xs={12}>
           <Grid item xs={12}>
             <PageSubTitle subtitle="Add New Round" />
           </Grid>
@@ -19,11 +19,9 @@ const RoundAdmin = () => (
               <AddNewRound />
             </AddRoundPaper>
           </Grid>
-          
+      </AddGrid>
 
-      </Grid>
-
-      <Grid item xs={6}>
+      <Grid item xs={12}>
 
         <Grid item xs={12}>
           <PageSubTitle subtitle="Manage Open/ Scheduled Rounds" />
@@ -36,7 +34,8 @@ const RoundAdmin = () => (
         
         
 
-      </Grid>  
+      </Grid> 
+
 
     </PageGrid>
     

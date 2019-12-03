@@ -1,9 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Fixtures from '../../fixtures';
 import SplashComplete from './component/status-complete';
 import SplashNotEntered from './component/status-not-entered';
-import SplashNotFinished from './component/status-not-finished';
 import { selectPlayerOneResultForRound, selectPlayerTwoResultForRound } from '../../../../../../redux/result/selectors/result.selectors';
 import { createStructuredSelector } from 'reselect';
 

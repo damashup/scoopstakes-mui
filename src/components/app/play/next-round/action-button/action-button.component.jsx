@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { Box, Button, Grid } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
 import {ActionGrid} from './styles';
 import { createStructuredSelector } from 'reselect';
 import { selectCurrentUser } from '../../../../../redux/user/selectors/user.selectors';
@@ -17,7 +17,7 @@ const ActionButton = ({currentUser}) => {
                 <Button variant='outlined' fullWidth>Edit predictions</Button>
             </Grid>
             <Grid item xs={6}>
-                <Button variant='outlined' fullWidth>Randomize your predictions</Button>
+                <Button variant='outlined' fullWidth>Randomize</Button>
             </Grid>  
         </ActionGrid>
         </>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 import { Paper, Grid } from '@material-ui/core';
-import { colorPrimary, colorWhite, colorGreyLight1 } from '../../../page-styles/base-styles';
+import { colorWhite, colorGreyLight1 } from '../../../page-styles/base-styles';
 
 export const AddTeamPaper = styled(Paper)`&&{
     margin-top: 2.3rem;

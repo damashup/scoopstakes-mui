@@ -4,6 +4,7 @@ import AddNewTeam from './add-new-team';
 import { Grid, Paper } from '@material-ui/core';
 import TeamList from './manage-existing-team';
 import {AddTeamPaper, PageGrid} from './styles';
+import DeleteDocsWithBlankTeamNames from './helper/delete-blank-teamname-button';
 
 const TeamAdmin = () => (
   <> 
@@ -33,10 +34,12 @@ const TeamAdmin = () => (
             <TeamList />
           </Paper>
         </Grid>
-        
-        
-
       </Grid>  
+
+      <Grid item xs={3}>
+        <PageSubTitle subtitle="Helpers - Quick and dirty" />
+        <DeleteDocsWithBlankTeamNames />
+      </Grid> 
 
     </PageGrid>
     

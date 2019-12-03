@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { List, ListItemText, ListItem} from '@material-ui/core';
-import {colorWhite, colorGreyLight2, colorQuinaryLight, colorQuaternaryDark } from '../../../../../../../components/page-styles/base-styles';
+import { List, ListItem} from '@material-ui/core';
+import {colorWhite, colorQuinaryLight} from '../../../../../../../components/page-styles/base-styles';
 
 export const SidebarListItem = styled(ListItem)`&&{
   background-color: ${colorQuinaryLight};

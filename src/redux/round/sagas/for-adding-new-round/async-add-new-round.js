@@ -7,6 +7,7 @@ import addNewRoundFailure from '../../actions/add-new-round/failure';
 import {isUserAuthenticated} from '../../../user/sagas/for-checking-user-session/is-user-authenticated.saga';
 
 export function* asyncAddNewRound({payload: round}){
+    console.log(round)
     try {
         const userRef = yield isUserAuthenticated();
         const newRoundRef = yield firestore.collection('rounds').add({
@@ -17,6 +18,7 @@ export function* asyncAddNewRound({payload: round}){
             // TODO add authorId..
 
         })
+        
         yield put(addNewRoundSuccess(newRoundRef));
     } catch(error) {
         yield put(addNewRoundFailure(error));

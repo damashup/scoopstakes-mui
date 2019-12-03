@@ -1,37 +1,17 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import {withRouter, Route, Redirect} from 'react-router-dom'
-import { Grid, Container, Divider} from '@material-ui/core';
-import { selectDirectorySections } from '../../redux/directory/selectors/directory.selectors';
-import { createStructuredSelector } from 'reselect';
-import SectionTitle from './components/title';
-import Subsection from '../subsection';
-import {Landing, SignIn} from '../../pages';
-import {SectionTitleGrid} from './styles';
+import { Grid, Container} from '@material-ui/core';
 import SectionRoutes from './components/routes';
 
-const Section = ({sections, match, currentUser}) => {
-    const sectionData = sections ? sections.find(({linkUrl}) => linkUrl === match.params.section) : null;
+const Section = () => {
 
     return (
        <Container maxWidth="lg">
             <Grid container spacing={1}>
-                <Grid item xs={12}>
-                    <SectionTitleGrid container>
-                        <SectionTitle title={sectionData ? sectionData.title : null} />
-                    </SectionTitleGrid>
-                </Grid>
-                
-                <SectionRoutes />
-              
+                <SectionRoutes />        
             </Grid>
         </Container>
     )
 }
-
-const mapStateToProps = createStructuredSelector ({
-    sections: selectDirectorySections
-  });
   
-  export default withRouter(connect(mapStateToProps)(Section));
+export default Section;
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import {Grid, List, ListItem, ListItemAvatar, Divider, Typography} from '@material-ui/core';
-import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
 import {StepAvatar, SectionTitleTypography} from './styles';
 
 const HowToStep = ({step}) => {

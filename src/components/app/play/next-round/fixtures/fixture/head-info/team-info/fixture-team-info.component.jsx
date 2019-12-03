@@ -1,32 +1,21 @@
 import React from 'react';
+import { Avatar, Grid } from '@material-ui/core';
 
-import { Avatar, Box, Grid, Typography } from '@material-ui/core';
+import {FixtureTeamName} from './styles';
 
 const TeamInfo = ({team}) => (
-
-    <Grid 
-      container 
-      direction='column' 
-      justify='center' 
-      alignItems='center' 
-      spacing={1}
+<>
+       <Grid 
+        container='column' 
+        justify='center' 
+        alignItems='center' 
       >
-        <Avatar src={team.logo}/>  
-        <Box 
-          component="div" 
-          textOverflow="ellipsis"
-          >
-            <Typography
-              component="span"
-              variant="h6"
-              color="textPrimary"
-              >
-            {team.name}
-            </Typography>
-          </Box>
-    </Grid>
+        <Grid item xs={12}><Avatar src={team.logo}/> </Grid>
+        <Grid item xs={12}><FixtureTeamName>{team.name}</FixtureTeamName></Grid>
+   
+      </Grid>
 
-             
+</>             
 
   );
 

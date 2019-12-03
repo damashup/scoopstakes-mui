@@ -4,7 +4,6 @@ import { PageDiv } from '../../components/page-styles/base-styles';
 import NextRound from '../../components/app/play/next-round';
 import {LandingGrid,LandingPaper} from './landing.styles';
 import HowToPlay from '../../components/app/play/how-to-play'
-import { Paper } from '@material-ui/core'
 import LoginWithEmailPage from '../../components/app/sign-in/with-email/horizontal';
 import LoginWithSocialHorizontal from '../../components/app/sign-in/with-social/horizontal'
 import CustomDivider from '../../components/page-elements/divider/custom-divider';

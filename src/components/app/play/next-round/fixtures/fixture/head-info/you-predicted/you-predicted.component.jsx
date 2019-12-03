@@ -13,7 +13,7 @@ const FinalScore = ({currentUser}) => {
     return (
     <>  
         <YouGrid container justify='center'>
-            You predicted
+            You predict
         </YouGrid>
 
         <Grid 

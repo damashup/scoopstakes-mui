@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 import {Grid} from '@material-ui/core';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import {colorWhite, colorGreyLight2, colorPrimaryDark, colorQuinaryDark, colorQuinaryLight } from '../../../../page-styles/base-styles';
+import {colorWhite, colorQuinaryLight } from '../../../../page-styles/base-styles';
 
 
 export const FixturesListBody = styled(List)`&&{
     background-color: ${colorQuinaryLight};
     padding: 1rem;
-    border-radius: 20px;   
+    //border-radius: 20px;   
 }`
 
 export const FixturesListHeaderBody = styled(List)`&&{

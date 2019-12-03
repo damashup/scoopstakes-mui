@@ -1,7 +1,6 @@
 import React from 'react';
 import Moment from 'react-moment';
 import {FixturesListHeaderGrid, RoundStartTimeText} from './styles';
-import { GrowDiv } from '../../../../../page-styles/base-styles';
 import { Grid } from '@material-ui/core';
 
 const HeaderInfo = ({nextRound}) => {

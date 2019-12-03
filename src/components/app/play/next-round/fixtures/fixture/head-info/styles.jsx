@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import {Grid, Box} from '@material-ui/core';
+import {Grid} from '@material-ui/core';
 import List from '@material-ui/core/List';
 import {colorWhite, colorQuinaryDark } from '../../../../../../page-styles/base-styles';
 

@@ -15,9 +15,10 @@ const MainRoutes = ({ currentUser}) => (
           <Redirect exact from='/leaderboards' to='/leaderboards/round' />
           <Redirect exact from='/battle' to='/battle/create' />
           <Route exact path='/signup' render={() => currentUser ? <Redirect to='/dashboard' />: <SignUp />} /> 
-          <Redirect from='/sign-out' to='/signin' />
+          <Redirect from='/sign-out' to='/sign-in' />
           <Route path='/:section'><Section currentUser={currentUser} /></Route>
           <Route exact path='/dashboard' render={() => currentUser ? <Section />: <SignIn />} />
+          {/* <Route exact path='/signin' render={() => currentUser ? <Section />: <SignIn />} /> */}
           
         </Switch>
 );

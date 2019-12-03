@@ -1,6 +1,5 @@
 import { getIn } from "formik";
 import React from "react";
-import { TextField } from "@material-ui/core";
 import {Text} from './styles';
 
 const TextFormField = ({field, form, ...props}) => {

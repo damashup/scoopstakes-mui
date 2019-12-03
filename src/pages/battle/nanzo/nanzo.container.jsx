@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import {connect} from 'react-redux';
 import {withRouter} from 'react-router-dom';
 import { fetchSingleRoundStart } from '../../../redux/round/actions';
@@ -9,8 +9,8 @@ import NanzoComponent from './nanzo.component';
 
 const NanzoContainer = ({match, fetchSingleRound, activeRound}) => {
   const roundId = match.params.roundId;
+  fetchSingleRound(roundId)
 
-  useEffect(() => {fetchSingleRound(roundId)}, [fetchSingleRound]);
     
     if(!activeRound) return 'Loading...';
     return <NanzoComponent activeRound={activeRound[0]} />

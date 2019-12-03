@@ -11,7 +11,6 @@ import {
 import HeaderInfo from './head-info';
 import MoreInfo from './more-info';
 import { Grid, Divider } from '@material-ui/core';
-import TitleInfo from './title-info';
 
 const NextRoundComponent = ({result}) => {
   console.log(result)
@@ -26,8 +25,6 @@ const NextRoundComponent = ({result}) => {
       component="nav"
       aria-labelledby="nested-list-subheader"      
     >
-      
-      <TitleInfo competition={result.defaultCompetition} startTime={result.defaultKoTime}/>
       <FixturesListHeaderBody onClick={handleClick}>
 
       <FixturesListHeaderGrid 

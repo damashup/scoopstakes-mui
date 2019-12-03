@@ -1,13 +1,11 @@
 import styled from 'styled-components';
 import {Grid} from '@material-ui/core';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import {colorWhite, colorGreyLight2, colorPrimaryDark } from '../../../../components/page-styles/base-styles';
+import {colorWhite, colorPrimary } from '../../../../components/page-styles/base-styles';
 
 
 
 export const SectionTitleDiv = styled(Grid)`&&{
-    background-color: ${colorPrimaryDark};
+    background-color: ${colorPrimary};
     //border: 1px solid ${colorWhite};
     color: ${colorWhite};
     font-size: 300%;

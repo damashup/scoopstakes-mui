@@ -1,116 +1,103 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-import { Formik, Form, Field } from 'formik';
-import TextFormField from '../../../../page-elements/form/formik/form-fields/text-field/text-form-field';
-import { Button } from '@material-ui/core';
-
+import {Formik, Form, Field} from 'formik';
 import {addNewRoundStart} from '../../../../../redux/round/actions';
-import fetchAllRoundsStart from '../../../../../redux/round/actions/fetch-all-rounds/start';
 
-import {FormField, SubmitButton} from './styles'
+import {SubmitButton} from './styles'
+import { Grid, ListItem, ListItemText, TextField} from '@material-ui/core';
+import AddFixturesInput from './add-fixtures/add-fixtures-input';
+import {INITIAL_ROUND_VALUES} from './helper';
+import SportSelector from './sport-selector';
+import DateSelector from './date-selector';
+import { DatePicker } from '@material-ui/pickers';
+import TextInput from '../../../../page-elements/form/formik/input/text-input';
+import DateInput from '../../../../page-elements/form/formik/input/date-input';
+import PageSubTitle from '../../../../page-elements/page-subtitle/page-subtitle.component';
+import MatchDay from '../../matchday';
 
-const AddRoundInput = ({addNewRoundStart, fetchAllRounds}) => {
-    const initial_state = { actual_first_goal: '', 
-                            deadline_time: '', 
-                            first_ko_time: '', 
-                            round_no: '',
-                            round_permalink: '',
-                            round_status: 'scheduled',
-                            sbd_jackpot_amount: '',
-                            sbd_rewards_pot: '',
-                            results: '',
-                            };
+
+const AddRoundInput = ({addNewRoundStart}) => {
+    const initial_state = INITIAL_ROUND_VALUES;
     const [newRoundDetails, setNewRoundDetails] = useState(initial_state)
 
-    const { actual_first_goal, 
+    const {
             deadline_time, 
-            first_ko_time, 
+            first_ko_time,
+            matchday, 
             round_no,
-            round_permalink,
             round_status,
-            sbd_jackpot_amount,
-            sbd_rewards_pot,
             results,
-            teams,
+            sport,
             uid,
+            
         } = newRoundDetails;
+ 
 
-    
     if(newRoundDetails!== initial_state) addNewRoundStart({
                                                             deadline_time, 
-                                                            first_ko_time, 
+                                                            first_ko_time,
+                                                            matchday, 
                                                             round_no,
                                                             round_status,
                                                             results,
+                                                            sport,
+                                                            uid,
                                                             });
+
+
     return (
 
             <Formik 
 
-                initialValues={{deadline_time: '', 
-                                first_ko_time: '', 
-                                round_no: '',
-                                round_status: '',
-                                results: '',
-                }} 
+                initialValues={INITIAL_ROUND_VALUES} 
 
-                onSubmit={(     data, 
-                            {   setSubmitting, 
-                                resetForm
-                            }
-                            ) => {
+                onSubmit={(data, {setSubmitting, resetForm}) => {
                                 setSubmitting(true);
-                                // make async call
                                 setNewRoundDetails({ 
                                                     deadline_time: data.deadline_time, 
-                                                    first_ko_time: data.first_ko_time, 
+                                                    first_ko_time: data.first_ko_time,
+                                                    matchday: data.matchday, 
                                                     round_no: data.round_no,
                                                     round_status: data.round_status,
                                                     results: data.results,
-                                                    })
-                                //fetchAllRounds()                    
+                                                    sport: data.sport,
+                                                    uid: data.uid,
+                                                    })                  
                                 resetForm()                    
                 }}
             >
 
-            {(values, isSubmitting ) => (
+            {(values, isSubmitting, ) => (
 
-                <Form>
-  
-                        <FormField
-                            placeholder='Enter Round Number'
-                            label='Round' 
-                            name='round_no' 
-                            component={TextFormField}
-                            variant="outlined"
-                        />
+            <Form>
 
-                        <FormField
-                            placeholder='Enter Deadline Date'
-                            label='Deadline Date' 
-                            name='deadline_time' 
-                            component={TextFormField}
-                            variant="outlined"
-                        />
+                <Grid container spacing={4}>
+                    <Grid item xs={1}>
+                        <Field name={`uid`} labelName='UID' variant='outlined' component={TextInput}/>
+                    </Grid>
+                    <Grid item xs={1}>
+                        <Field name={`round_no`} labelName='Round Number' variant='outlined' component={TextInput}/>
+                    </Grid>
+                    <Grid item xs={2}>
+                        <SportSelector />
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Field name={`deadline_time`} labelName='Deadline Date' component={DateInput}/>
+                    </Grid>
+                    <Grid item xs={4}>
+                        <Field name={`first_ko_time`} labelName='1st Kick Off' type='datetime' component={DateInput}/>
+                    </Grid>   
+                </Grid>
+                {/* <Grid container spacing={4}>
+                    <PageSubTitle subtitle='Add Fixtures' />
+                    <AddFixturesInput values={values}/>
+                </Grid> */}
 
-                        <FormField
-                            placeholder='Enter First KO time'
-                            label='First KO Time' 
-                            name='first_ko_time' 
-                            component={TextFormField}
-                            variant="outlined"
-                        />
+                <MatchDay values={values} />
+                
+          
 
-                        <FormField
-                            placeholder='Add Fixtures'
-                            label='Add Fixtures' 
-                            name='results' 
-                            component={TextFormField}
-                            variant="outlined"
-                        />          
-                        {/* <Grid container direction='row' justify='center'> */}
-
-                            <SubmitButton 
+                <SubmitButton 
                                 disabled={isSubmitting} 
                                 type='submit'  
                                 fullWidth
@@ -118,10 +105,10 @@ const AddRoundInput = ({addNewRoundStart, fetchAllRounds}) => {
                                 Submit
                             </SubmitButton>
 
-                        {/* </Grid> */}
-                        {/* <pre>
+                        
+                        <pre>
                             {JSON.stringify(values, null, 2)}
-                        </pre> */}
+                        </pre>
                 </Form>
             )}
 
@@ -134,7 +121,6 @@ const AddRoundInput = ({addNewRoundStart, fetchAllRounds}) => {
 
 const mapDispatchToProps = dispatch => ({
     addNewRoundStart: newTeamDetails => dispatch(addNewRoundStart(newTeamDetails)),
-    fetchAllRounds: () => dispatch(fetchAllRoundsStart())
   })
   
 export default connect(null,mapDispatchToProps)(AddRoundInput);

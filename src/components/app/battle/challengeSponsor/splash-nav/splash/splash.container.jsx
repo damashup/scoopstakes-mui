@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React from "react";
 import {connect} from 'react-redux';
 import Splash from "./splash.component";
 import { createStructuredSelector } from "reselect";
@@ -6,7 +6,6 @@ import { selectCurrentUser } from "../../../../../../redux/user/selectors/user.s
 import fetchPlayerOneResultForRoundStart from "../../../../../../redux/result/actions/fetch-player-one-result-for-round/start/fetch-player-one-result-for-round-start";
 import fetchPlayerTwoResultForRoundStart from "../../../../../../redux/result/actions/fetch-player-two-result-for-round/start/fetch-player-two-result-for-round-start";
 import { selectActiveRound } from "../../../../../../redux/round/selectors/round.selectors";
-import { fetchSingleRoundStart } from "../../../../../../redux/round/actions";
 
 
 const SplashContainer = ({ 
@@ -15,29 +14,16 @@ const SplashContainer = ({
                         activeRound,
                         playerOneResult,
                         playerTwoResult,
-                        fetchSingleRound,
-                        roundRef,
                         }) => {
     console.log(activeRound[0])
     const steemUsername = currentUser ? currentUser.steemUsername : null;
     const playerOne = steemUsername;
-    // console.log(`Player One is ${playerOne}`);
     const playerTwo = "nanzo-scoop";
-    // console.log(`Player Two is ${playerTwo}`);
-    // playerOneResult;
-    
-    // playerTwoResult(roundId, playerTwo);
-    // const asyncFetchPlayerResults = async () => {
-    //     const pOneResult = await fetch playerOneResult({ roundId, playerOne })
-
-    // }
-    
     const fetchPlayerOneResult = playerOneResult({ playerOne, roundId  });
     console.log(`Player One result for round ${roundId} is here... ${fetchPlayerOneResult}`);
     const fetchPlayerTwoResult = playerTwoResult({ playerTwo, roundId });
     console.log(`Player Two result for round ${roundId} is here... ${fetchPlayerTwoResult}`);
     
-    // if(fetchPlayerOneResult && fetchPlayerTwoResult) 
         return (
                 <>
                     <Splash 
@@ -45,7 +31,6 @@ const SplashContainer = ({
                     />
                 </>
                 )
-    // return 'Loading...'
 };
 
 const mapStateToProps = createStructuredSelector({

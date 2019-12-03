@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Paper, Button, Typography } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 import HowToStep from './step';
 import {HowToPaper, HowToTitleTypography} from './styles';
 
@@ -7,7 +7,6 @@ const HowToPlay = ({stepItems}) => {
     console.log(stepItems)
     return (
         <HowToPaper elevation={4}>
-
             <Grid container justify='center'>
                 <HowToTitleTypography
                 component="h2"

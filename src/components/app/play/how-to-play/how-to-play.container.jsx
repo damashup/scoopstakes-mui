@@ -1,6 +1,7 @@
 import React from 'react';
-import { Grid } from '@material-ui/core';
 import HowToPlayComponent from './how-to-play.component';
+import Rightbar from '../rightbar/rightbar';
+import { Grid } from '@material-ui/core';
 
 const HowToPlayContainer = () => {
 
@@ -37,7 +38,14 @@ const HowToPlayContainer = () => {
                 }
             ];
             console.log(stepItems)
-    return (<HowToPlayComponent stepItems={stepItems} />)
+    return (
+        <Grid container>
+            <Grid item xs={4}><HowToPlayComponent stepItems={stepItems} /></Grid>
+            <Grid item xs={4}></Grid>
+            <Grid item xs={4}><Rightbar /></Grid>
+        </Grid>
+        
+        )
                  
 }
 

@@ -22,8 +22,8 @@ const Topbar = ({ onSidebarOpen}) => {
         <RouterLink to="/">
           <HeaderLogo 
             alt="Logo" 
-            src='/images/nanzo-logo.svg' /
-          >
+            src='/images/nanzo-logo.svg'
+          />
         </RouterLink>
 
         <GrowDiv />

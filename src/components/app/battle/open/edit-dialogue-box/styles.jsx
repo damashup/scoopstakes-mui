@@ -1,0 +1,8 @@
+import styled from 'styled-components';
+import { Button } from '@material-ui/core';
+import { colorGreyLight2 } from '../../../../page-styles/base-styles';
+
+export const EditButton = styled(Button)`&&{
+    background-color: ${colorGreyLight2};
+
+}`; 

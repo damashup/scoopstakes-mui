@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 import {textBig, 
         textMedium,
         linkDefault,
-        colorQuinaryDark,
         colorWhite} from '../../../page-styles/base-styles';
 
 

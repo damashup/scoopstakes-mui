@@ -1,9 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {FixturesListHeaderItem} 
-        from './styles';
-import { GrowDiv } from '../../../../../../page-styles/base-styles';
-import { Avatar, Box, Grid, Button } from '@material-ui/core';
+import { Grid} from '@material-ui/core';
 import TeamInfo from './team-info/fixture-team-info.component';
 import FinalScore from './final-score';
 import YouPredicted from './you-predicted';

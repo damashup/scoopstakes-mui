@@ -1,12 +1,11 @@
 import React, { forwardRef } from 'react';
 import { NavLink as RouterLink } from 'react-router-dom';
-import { List, Typography} from '@material-ui/core';
 import {connect} from 'react-redux';
 import {signOutStart} from '../../../../../../../redux/user/actions/sign-out/start/sign-out-start.action';
 import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Collapse from '@material-ui/core/Collapse';
-import {SidebarListItem, SidebarTextDiv, SidebarSubList} from './sidebar-item.styles'
+import {SidebarListItem, SidebarTextDiv, SidebarSubList} from './styles'
 import SidebarSubItem from './sub-item/sub-item.component';
 
 const CustomRouterLink = forwardRef((props, ref) => (

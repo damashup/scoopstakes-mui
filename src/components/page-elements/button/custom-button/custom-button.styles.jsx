@@ -19,6 +19,7 @@ import {
         buttonVanilla,
         colorBlack
         } from '../../../page-styles/base-styles';
+import { Button } from '@material-ui/core';
 
 
 const getBespokeButtonStyles = props => {
@@ -47,21 +48,13 @@ const vanillaStyles = css`
 `;
 
 // Common Styles
-export const CustomButtonDiv = styled.button`
-    width: auto;
-    margin: auto;
+export const CustomButtonDiv = styled(Button)`&&{
     letter-spacing: 0.5px;
-    padding: 0 2rem 0 2rem;
-    font-size: 15px;
-    //text-transform: uppercase;
-    font-weight: bolder;
+    font-size: 18px;
     border: none;
     cursor: pointer;
     border: 1px solid ${colorBlack};
-
-    display: flex;
-    align-items: center;
     
     ${getBespokeButtonStyles}
 
-`;
+}`;

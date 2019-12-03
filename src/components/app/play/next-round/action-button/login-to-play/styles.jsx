@@ -1,8 +1,6 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import styled from 'styled-components';
-import { Paper } from '@material-ui/core';
-import { colorQuinary } from '../../../../../page-styles/base-styles';
+import { Paper, Button } from '@material-ui/core';
+import { colorQuinary, submitButton } from '../../../../../page-styles/base-styles';
 
 
 
@@ -21,18 +19,6 @@ export function getModalStyle() {
   };
 }
 
-export const useStyles = makeStyles(theme => ({
-    paper: {
-      //position: 'absolute',
-      //width: 800,
-      //backgroundColor: theme.palette.background.paper,
-      //border: '2px solid #000',
-      //boxShadow: theme.shadows[5],
-      //padding: theme.spacing(2, 4, 3),
-    },
-  }));
-
-
 export const ModalDivPaper = styled(Paper)`&&{
   position: absolute;
   width: 2000;
@@ -41,3 +27,8 @@ export const ModalDivPaper = styled(Paper)`&&{
   padding: 3rem;
 
 }`;
+
+export const SignInButton = styled(Button)`&&{
+  ${submitButton}
+  font-size: 200%;
+}`

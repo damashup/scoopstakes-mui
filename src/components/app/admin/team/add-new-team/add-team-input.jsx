@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-import { Formik, Form, Field } from 'formik';
+import { Formik, Form } from 'formik';
 import TextFormField from '../../../../page-elements/form/formik/form-fields/text-field/text-form-field';
-import { Button } from '@material-ui/core';
 
 import {addNewTeamStart} from '../../../../../redux/team/actions';
 import fetchAllTeamsStart from '../../../../../redux/team/actions/fetch-all-teams/start';
