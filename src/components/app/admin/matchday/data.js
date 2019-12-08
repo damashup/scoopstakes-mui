@@ -1,4 +1,4 @@
-export const matchdayTwo = {
+export const matchday = {
     "count": 15,
     "filters": {
         "dateFrom": "2019-12-04",
@@ -744,7 +744,7 @@ export const matchdayTwo = {
     ]
 };
 
-export const matchday = [
+export const matchday0 = [
     {
         id: 1,
         date: "2019-12-04"

@@ -4,6 +4,7 @@ import AddNewRound from './add-new-round';
 import { Grid, Paper } from '@material-ui/core';
 import RoundList from './manage-existing-round';
 import {AddGrid, AddRoundPaper, PageGrid} from './styles';
+import FetchMatchday from './fetch-matchday';
 
 const RoundAdmin = () => (
   <> 
@@ -16,12 +17,14 @@ const RoundAdmin = () => (
           </Grid>
           <Grid item xs={12}>
             <AddRoundPaper elevation={8}>
-              <AddNewRound />
+              <FetchMatchday />
+              
+              {/* <AddNewRound /> */}
             </AddRoundPaper>
           </Grid>
       </AddGrid>
 
-      <Grid item xs={12}>
+      {/* <Grid item xs={12}>
 
         <Grid item xs={12}>
           <PageSubTitle subtitle="Manage Open/ Scheduled Rounds" />
@@ -34,7 +37,7 @@ const RoundAdmin = () => (
         
         
 
-      </Grid> 
+      </Grid>  */}
 
 
     </PageGrid>
